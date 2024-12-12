@@ -1,0 +1,10 @@
+logging:
+  level:
+    tc: WARN
+    org.testcontainers: WARN
+    com.github.dockerjava: WARN
+    com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.wire: OFF
+    org.springframework.test.context.cache: DEBUG #This help see the count of created context
+    org.apache.kafka: ERROR
+    org.springframework.kafka.listener: ERROR
+    io.confluent.kafka.serializers: ERROR

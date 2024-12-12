@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: kafka-retry-demo
+  kafka:
+    listener:
+      ack-mode: manual
+    producer:
+      auto-register-schemas: true
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      key-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    consumer:
+      enable-auto-commit: false
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      key-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        specific.avro.reader: true
+      group-id: demo-app
+      auto-offset-reset: earliest
+    properties:
+      schema.registry.url: mock://testUrl
+
+topics:
+  demo-topic: my-demo-topic
+
+logging:
+  level:
+    org.springframework.kafka.listener: debug

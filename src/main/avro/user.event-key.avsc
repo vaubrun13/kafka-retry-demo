@@ -1,0 +1,12 @@
+{
+    "type": "record",
+    "name": "EventKey",
+    "namespace": "avro.generated.demo",
+    "fields": [
+      {
+        "name": "id",
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    ]
+}
